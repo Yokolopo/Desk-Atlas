@@ -1,0 +1,202 @@
+/* ============================================================
+   Desk-setup affiliate site — shared styles
+   Aesthetic: precision catalog. Workspace-white, workshop-green
+   accent, monospace spec tags. Space Grotesk / Inter / Space Mono.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --ink:      #16211C;   /* near-black, faint green cast */
+  --paper:    #FAF9F6;   /* warm workspace white         */
+  --card:     #FFFFFF;
+  --accent:   #1F6F5C;   /* workshop green               */
+  --accent-2: #C79A3A;   /* brass highlight, used rarely */
+  --line:     #E6E3DB;   /* hairline                     */
+  --muted:    #6C7168;   /* secondary text               */
+  --radius:   10px;
+  --maxw:     980px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+/* ---------- header ---------- */
+.site-head {
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+  position: sticky; top: 0; z-index: 10;
+}
+.site-head .wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 66px;
+}
+.brand {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700; font-size: 20px; letter-spacing: -0.01em;
+  color: var(--ink); text-decoration: none;
+  display: flex; align-items: center; gap: 9px;
+}
+.brand .mark {
+  width: 20px; height: 20px; border-radius: 4px;
+  background: var(--accent);
+  display: inline-block;
+  box-shadow: inset 0 0 0 3px var(--paper), inset 0 0 0 4px var(--accent);
+}
+.nav a {
+  color: var(--muted); text-decoration: none; font-size: 14px;
+  font-weight: 500; margin-left: 22px;
+}
+.nav a:hover { color: var(--ink); }
+
+/* ---------- hero ---------- */
+.hero { padding: 84px 0 64px; border-bottom: 1px solid var(--line); }
+.eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent); margin: 0 0 20px;
+}
+.hero h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700; letter-spacing: -0.02em;
+  font-size: clamp(34px, 6vw, 58px); line-height: 1.04;
+  margin: 0 0 22px; max-width: 16ch;
+}
+.hero p { font-size: 19px; color: var(--muted); margin: 0 0 34px; max-width: 54ch; }
+.hero .cta {
+  display: inline-block; background: var(--ink); color: var(--paper);
+  text-decoration: none; font-weight: 600; font-size: 15px;
+  padding: 13px 22px; border-radius: var(--radius);
+}
+.hero .cta:hover { background: var(--accent); }
+
+/* ---------- roundup index cards ---------- */
+.section-label {
+  font-family: 'Space Mono', monospace; font-size: 12px;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
+  margin: 56px 0 20px; display: flex; align-items: center; gap: 12px;
+}
+.section-label::after {
+  content: ''; flex: 1; height: 1px; background: var(--line);
+}
+.grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px;
+  padding-bottom: 72px;
+}
+.rcard {
+  display: block; text-decoration: none; color: var(--ink);
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 24px;
+  transition: border-color .15s ease, transform .15s ease;
+}
+.rcard:hover { border-color: var(--accent); transform: translateY(-2px); }
+.rcard .idx {
+  font-family: 'Space Mono', monospace; font-size: 12px;
+  color: var(--accent); letter-spacing: 0.08em;
+}
+.rcard h3 {
+  font-family: 'Space Grotesk', sans-serif; font-weight: 600;
+  font-size: 20px; letter-spacing: -0.01em; margin: 10px 0 8px; line-height: 1.2;
+}
+.rcard p { color: var(--muted); font-size: 15px; margin: 0; }
+
+/* ---------- article ---------- */
+.article { padding: 56px 0 40px; }
+.article .kicker {
+  font-family: 'Space Mono', monospace; font-size: 12px;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent);
+}
+.article h1 {
+  font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+  letter-spacing: -0.02em; font-size: clamp(30px, 5vw, 46px);
+  line-height: 1.08; margin: 14px 0 20px; max-width: 22ch;
+}
+.article .lede { font-size: 19px; color: var(--muted); max-width: 62ch; }
+
+.disclosure {
+  font-size: 13.5px; color: var(--muted); background: #F2F1EC;
+  border: 1px solid var(--line); border-radius: 8px;
+  padding: 12px 15px; margin: 26px 0 0;
+}
+
+.group-title {
+  font-family: 'Space Grotesk', sans-serif; font-weight: 600;
+  font-size: 22px; letter-spacing: -0.01em;
+  margin: 52px 0 6px; padding-top: 10px;
+}
+.group-note { color: var(--muted); font-size: 15.5px; margin: 0 0 20px; }
+
+/* ---------- product spec card (the signature element) ---------- */
+.pick {
+  display: grid; grid-template-columns: 46px 1fr; gap: 16px;
+  padding: 20px 0; border-top: 1px solid var(--line);
+}
+.pick:last-of-type { border-bottom: 1px solid var(--line); }
+.pick .tag {
+  font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700;
+  color: var(--accent); padding-top: 3px;
+}
+.pick .name {
+  font-family: 'Space Grotesk', sans-serif; font-weight: 600;
+  font-size: 18px; letter-spacing: -0.01em; margin: 0 0 4px;
+}
+.pick .name a { color: var(--ink); text-decoration: none; border-bottom: 2px solid var(--accent); }
+.pick .name a:hover { color: var(--accent); }
+.pick .verdict { margin: 0 0 6px; font-size: 16px; }
+.pick .tradeoff {
+  margin: 0; font-size: 14.5px; color: var(--muted);
+  display: flex; gap: 8px;
+}
+.pick .tradeoff b {
+  font-family: 'Space Mono', monospace; font-weight: 700; font-size: 11px;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-2);
+  white-space: nowrap; padding-top: 3px;
+}
+
+/* ---------- top picks callout ---------- */
+.toppicks {
+  background: var(--ink); color: var(--paper);
+  border-radius: var(--radius); padding: 30px 30px 26px; margin: 48px 0 20px;
+}
+.toppicks .section-label { color: #9FB4AC; margin: 0 0 14px; }
+.toppicks .section-label::after { background: #33443D; }
+.toppicks ol { margin: 0; padding-left: 20px; }
+.toppicks li { margin-bottom: 10px; }
+.toppicks a { color: #7FD0BE; text-decoration: none; border-bottom: 1px solid #33443D; }
+.toppicks a:hover { border-color: #7FD0BE; }
+
+/* ---------- footer ---------- */
+.site-foot {
+  border-top: 1px solid var(--line); margin-top: 40px;
+  padding: 34px 0; color: var(--muted); font-size: 14px;
+}
+.site-foot .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
+.site-foot a { color: var(--muted); }
+
+/* ---------- responsive ---------- */
+@media (max-width: 720px) {
+  .grid { grid-template-columns: 1fr; }
+  .hero { padding: 56px 0 44px; }
+  .nav a:not(:last-child) { display: none; }
+}
+
+/* ---------- a11y ---------- */
+a:focus-visible, .cta:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto; }
+}
