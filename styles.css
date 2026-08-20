@@ -285,6 +285,82 @@ body .shop-card-action small{max-width:28ch;color:#667085;font-size:10px;line-he
 @media(max-width:620px){body .shop-area{padding-inline:18px}body .shop-grid{grid-template-columns:1fr;gap:18px}body .shop-card-image,body .shop-card-featured .shop-card-image{min-height:250px}body .shop-card-copy,body .shop-card-featured .shop-card-copy{padding:23px 21px}}
 @media(prefers-reduced-motion:reduce){body .shop-card,body .shop-link{transition:none!important}body .shop-card:hover,body .shop-link:hover{transform:none}}
 
+/* Desk Atlas commerce theme — Amazon-inspired color system, original editorial layout. */
+:root{
+  --amazon-navy:#131921;
+  --amazon-slate:#232f3e;
+  --amazon-slate-light:#37475a;
+  --amazon-orange:#ff9900;
+  --amazon-orange-hover:#ffb84d;
+  --amazon-link:#007185;
+  --amazon-canvas:#eaeded;
+  --amazon-surface:#fff;
+  --amazon-ink:#0f1111;
+  --amazon-muted:#565959;
+  --amazon-line:#d5d9d9;
+  --ink:var(--amazon-ink);
+  --paper:var(--amazon-canvas);
+  --surface:var(--amazon-surface);
+  --surface-elevated:#f7fafa;
+  --muted:var(--amazon-muted);
+  --line:var(--amazon-line);
+  --accent:var(--amazon-link);
+  --accent-gold:var(--amazon-orange);
+  --night:var(--amazon-navy);
+  --night-soft:var(--amazon-slate);
+  --signal:var(--amazon-orange);
+  --walnut:var(--amazon-slate);
+}
+body{background:var(--amazon-canvas);color:var(--amazon-ink)}
+body .site-head{background:var(--amazon-navy);border-color:transparent;color:#fff}
+body .nav a{color:#fff}
+body .nav a[aria-current="page"],body .nav a:hover{color:var(--amazon-orange)}
+body .nav a:not(.nav-cta)::after{background:var(--amazon-orange)}
+body .nav-cta,body .button{background:var(--amazon-orange);color:var(--amazon-ink)}
+body .nav-cta:hover,body .button:hover{background:var(--amazon-orange-hover);color:var(--amazon-ink)}
+body .mobile-nav nav{background:var(--amazon-slate)}
+body .reading-progress{background:var(--amazon-orange)}
+body a:not(.button):not(.nav-cta):not(.shop-link){text-decoration-color:color-mix(in srgb,var(--amazon-link),transparent 50%)}
+body a:not(.button):not(.nav-cta):not(.shop-link):hover{color:#c7511f}
+body .hero,body .desk-experience,body .shop-hero{background:var(--amazon-slate);color:#fff}
+body .hero h1 em,body .shop-hero h1 em{color:var(--amazon-orange)}
+body .hero-copy>p,body .shop-hero-copy>p:not(.eyebrow):not(.shop-disclosure){color:#e3e6e6}
+body .hero-meta span,body .shop-disclosure{color:#bdc4cb!important}
+body .hero-media,body .shop-hero-image{background:var(--amazon-navy)}
+body .hero-media:after,body .shop-hero-image:after{background:linear-gradient(90deg,rgba(35,47,62,.62),transparent 42%),linear-gradient(0deg,rgba(19,25,33,.58),transparent 48%)}
+body .section,body .intro,body .standard,body .shop-intro{background:var(--amazon-surface)}
+body .section-label,body .eyebrow,body .kicker,body .micro-label,body .product-category{color:#c45500}
+body .feature-card,body .quick-answer,body .desk-reset,body .toppicks{background:var(--amazon-slate);color:#fff}
+body .feature-copy p,body .quick-answer p,body .desk-reset p,body .toppicks p{color:#e3e6e6}
+body .problem-card,body .setup-card,body .pick,body .page-simple article{background:var(--amazon-surface)}
+body .problem-card:hover{background:var(--amazon-slate);color:#fff}
+body .principles{background:var(--amazon-orange);color:var(--amazon-ink)}
+body .principles span{color:#5f3700}
+body .newsletter,body .shop-cta{background:var(--amazon-slate);color:#fff}
+body .newsletter p,body .shop-cta p:not(.eyebrow){color:#e3e6e6}
+body .shop-hero-note{background:#fff;color:var(--amazon-ink)}
+body .shop-area{background:var(--amazon-navy)}
+body .shop-toolbar{background:var(--amazon-navy)}
+body .shop-filters button{border-color:#8796a8;color:#fff}
+body .shop-filters button:hover,body .shop-filters button.is-active{background:var(--amazon-orange);border-color:var(--amazon-orange);color:var(--amazon-ink)}
+body .shop-card{background:#fff;color:var(--amazon-ink)}
+body .shop-link{background:var(--amazon-orange);color:var(--amazon-ink)}
+body .shop-link:hover{background:var(--amazon-orange-hover);color:var(--amazon-ink)}
+body .shop-link:focus-visible{outline-color:var(--amazon-link)}
+body .disclosure{background:#fff8e5;color:#3d2b00;border:1px solid #f3cf78}
+body .article,body .page-simple{background:var(--amazon-canvas)}
+body .article-title,body .article-body,body .page-simple>.wrap,body .page-simple article{background:#fff}
+body .article-title{padding:clamp(38px,6vw,76px);margin-top:clamp(24px,4vw,48px)}
+body .article-body{padding:0 clamp(30px,6vw,76px) clamp(60px,8vw,96px)}
+body .article-hero{border-radius:0}
+body .pick .name a:after{background:var(--amazon-orange);border-color:var(--amazon-orange);color:var(--amazon-ink)}
+body .pick .name a:hover:after{background:var(--amazon-orange-hover)}
+body .site-foot{background:var(--amazon-navy);color:#fff}
+body .site-foot a{color:#fff}
+body .site-foot a:hover{color:var(--amazon-orange)}
+body :focus-visible{outline-color:var(--amazon-orange);outline-offset:3px}
+@media(max-width:620px){body .article-title{padding:30px 22px;margin-top:18px}body .article-body{padding:0 22px 56px}}
+
 /* Premium cascade lock — intentionally last. */
 body{background:var(--paper);font-family:"Onest",system-ui,sans-serif;color:var(--ink);letter-spacing:-.008em}
 body h1,body h2,body h3,body .display,body .hero h1,body .article h1,body .shop-hero h1,body .newsletter h2{font-family:"Onest",system-ui,sans-serif;font-weight:700;letter-spacing:-.04em}
