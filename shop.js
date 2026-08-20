@@ -17,7 +17,7 @@ const escapeHtml = (value) => String(value)
   .replaceAll('"', "&quot;").replaceAll("'", "&#039;");
 
 const productCard = (product, index) => `
-  <article class="shop-card${index === 0 ? " shop-card-featured" : ""}" data-category="${escapeHtml(product.category)}" data-product="${escapeHtml(product.slug)}">
+  <article class="shop-card" data-category="${escapeHtml(product.category)}" data-product="${escapeHtml(product.slug)}" style="--card-order:${index}">
     <div class="shop-card-image">
       <img src="${escapeHtml(product.imageUrl)}" alt="${escapeHtml(product.imageAlt)}" width="1200" height="800" loading="lazy" decoding="async">
       <span>${escapeHtml(product.bestFor)}</span>
@@ -26,9 +26,10 @@ const productCard = (product, index) => `
       <p class="product-category">${escapeHtml(product.category)} · ${escapeHtml(product.brand)}</p>
       <h2>${escapeHtml(product.name)}</h2>
       <p>${escapeHtml(product.shortDescription)}</p>
-      <ul class="product-benefits">${product.keyBenefits.slice(0, 3).map((benefit) => `<li>${escapeHtml(benefit)}</li>`).join("")}</ul>
-      <p class="product-fit"><strong>Best for:</strong> ${escapeHtml(product.bestFor)}</p>
-      <a class="shop-link" href="${escapeHtml(product.affiliateUrl)}" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon <span aria-hidden="true">→</span></a>
+      <div class="shop-card-action">
+        <a class="shop-link" href="${escapeHtml(product.affiliateUrl)}" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon <span aria-hidden="true">↗</span></a>
+        <small>Price and availability are determined on Amazon.</small>
+      </div>
     </div>
   </article>`;
 

@@ -260,6 +260,31 @@ p,li { text-wrap: pretty; }
 .pick .name a:after{display:inline-flex;min-height:44px;align-items:center;margin-top:14px;padding:0 15px;border:1px solid var(--ink);background:var(--ink);color:#fff;text-decoration:none}.shop-all{margin:20px 0 0;font-size:14px;color:var(--muted)}.shop-all a{color:var(--ink);font-weight:700;text-underline-offset:4px}.page-simple .content{max-width:700px}.page-simple .content>p{max-width:65ch}
 @media(max-width:620px){.hero h1{font-size:clamp(46px,14vw,58px)}.hero-copy{padding-block:56px 48px}.hero-meta{margin-top:30px;gap:10px 16px}.hero-media,.hero-media img{min-height:300px}.hero-media img{object-position:64% center}.section{padding-block:54px}.feature-media{min-height:260px}.pick{grid-template-columns:34px 1fr;padding:25px 0}.pick>div:last-child{grid-column:2}.article-title{gap:24px}.article h1{font-size:clamp(40px,12vw,54px)}.article-hero img{aspect-ratio:4/3;object-position:65% center}}
 
+/* Reference-led product wall: dark gallery field, bright uniform cards, orange Amazon actions. */
+body .shop-area{width:100%;max-width:none;padding:clamp(44px,6vw,86px) max(24px,calc((100vw - 1180px)/2)) clamp(76px,9vw,128px);background:#070b18;color:#f8fafc}
+body .shop-toolbar{top:78px;padding:0 0 28px;border:0;background:#070b18}
+body .shop-filters button{border-color:#475069;color:#e8ebf2}
+body .shop-filters button:hover,body .shop-filters button.is-active{background:#ff9800;border-color:#ff9800;color:#171009}
+body .shop-count{color:#aeb6ca}
+body .shop-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;border:0;background:transparent}
+body .shop-card,body .shop-card-featured{grid-column:auto;display:flex;flex-direction:column;min-width:0;overflow:hidden;border:0;border-radius:14px;background:#f8f9fb;color:#111827;box-shadow:0 6px 8px rgba(0,0,0,.2);transition:transform .32s cubic-bezier(.22,1,.36,1),box-shadow .32s cubic-bezier(.22,1,.36,1)}
+body .shop-card:hover{transform:translateY(-7px);box-shadow:0 8px 8px rgba(0,0,0,.3)}
+body .shop-card-image,body .shop-card-featured .shop-card-image{min-height:280px;aspect-ratio:4/3;background:#f1f3f6}
+body .shop-card-image img{min-height:0;object-fit:cover;filter:saturate(.88) contrast(1.03)}
+body .shop-card-image::after{content:"";position:absolute;inset:auto 0 0;height:35%;background:linear-gradient(transparent,rgba(7,11,24,.24));pointer-events:none}
+body .shop-card-image>span{inset:auto auto 16px 16px;max-width:calc(100% - 32px);border-radius:999px;background:rgba(255,255,255,.94);color:#111827;font-family:"Onest",system-ui,sans-serif;font-size:11px;font-weight:750;letter-spacing:0;text-transform:none}
+body .shop-card-copy,body .shop-card-featured .shop-card-copy{display:flex;flex:1;flex-direction:column;justify-content:flex-start;padding:26px 24px 24px}
+body .shop-card-copy h2{margin:7px 0 12px;color:#111827;font-family:"Onest",system-ui,sans-serif;font-size:clamp(1.15rem,1.6vw,1.4rem);font-weight:750;line-height:1.28;letter-spacing:-.025em}
+body .shop-card-copy>p:not(.product-category){margin:0 0 24px;color:#4b5565;font-size:14px;line-height:1.6}
+body .shop-card-action{display:flex;flex-direction:column;align-items:flex-start;gap:11px;margin-top:auto}
+body .shop-link{min-height:48px;padding:0 21px;border:0;border-radius:999px;background:#ff9800;color:#171009;font-size:14px;font-weight:800;text-decoration:none}
+body .shop-link:hover{background:#ffad2f;color:#171009;transform:translateY(-1px)}
+body .shop-link:focus-visible{outline:3px solid #111827;outline-offset:3px}
+body .shop-card-action small{max-width:28ch;color:#667085;font-size:10px;line-height:1.4}
+@media(max-width:900px){body .shop-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){body .shop-area{padding-inline:18px}body .shop-grid{grid-template-columns:1fr;gap:18px}body .shop-card-image,body .shop-card-featured .shop-card-image{min-height:250px}body .shop-card-copy,body .shop-card-featured .shop-card-copy{padding:23px 21px}}
+@media(prefers-reduced-motion:reduce){body .shop-card,body .shop-link{transition:none!important}body .shop-card:hover,body .shop-link:hover{transform:none}}
+
 /* Premium cascade lock — intentionally last. */
 body{background:var(--paper);font-family:"Onest",system-ui,sans-serif;color:var(--ink);letter-spacing:-.008em}
 body h1,body h2,body h3,body .display,body .hero h1,body .article h1,body .shop-hero h1,body .newsletter h2{font-family:"Onest",system-ui,sans-serif;font-weight:700;letter-spacing:-.04em}
