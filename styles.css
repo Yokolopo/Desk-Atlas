@@ -280,6 +280,7 @@ body .shop-hero{background:var(--night)}body .shop-hero h1{font-size:clamp(3.5re
 body .shop-hero-note{background:var(--signal);color:var(--night);border-radius:12px}body .shop-hero-note a{color:var(--night)}
 body .shop-filters button{border-radius:999px;background:transparent}body .shop-filters button:hover,body .shop-filters button.is-active{background:var(--night);border-color:var(--night);color:#fff}
 body .shop-card-image{border-radius:0;min-height:260px}body .shop-card-copy{padding:clamp(25px,3vw,40px)}
+body .product-benefits{display:grid;gap:8px;margin:18px 0;padding:0;list-style:none;color:var(--muted);font-size:14px}body .product-benefits li{display:flex;gap:9px}body .product-benefits li::before{content:"✓";color:var(--accent);font-weight:800}body .shop-card-image img{width:100%;height:100%;min-height:260px;object-fit:cover}
 body .shop-link{display:inline-flex;align-items:center;min-height:46px;padding:0 16px;border:0;border-radius:8px;background:var(--night);color:#fff;text-decoration:none}
 body .article h1,body .page-simple h1{font-size:clamp(3.2rem,7vw,6rem);line-height:.94}body .article-hero{border-radius:16px}
 body .reading-note{background:var(--signal);color:var(--night);border:0;border-radius:12px}body .disclosure{border:0;border-radius:10px;background:oklch(92% .035 91);color:oklch(27% .04 74)}

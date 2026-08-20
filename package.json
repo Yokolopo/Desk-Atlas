@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "validate:products": "node scripts/validate-products.mjs",
+    "build": "npm run validate:products && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
