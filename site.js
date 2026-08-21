@@ -22,25 +22,6 @@ addEventListener("scroll", () => {
 }, { passive: true });
 updateProgress();
 
-const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
-const revealTargets = document.querySelectorAll(
-  ".section-head, .feature-card, .problem-card, .standard, .faq-grid, .shop-card, .pick, .desk-reset, .toppicks, .page-simple .content > *, .article-title, .article-hero"
-);
-
-if (!reducedMotion && "IntersectionObserver" in window) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add("is-revealed");
-      observer.unobserve(entry.target);
-    });
-  }, { rootMargin: "0px 0px -8%", threshold: 0.08 });
-  revealTargets.forEach((target) => {
-    target.classList.add("reveal-ready");
-    observer.observe(target);
-  });
-}
-
 document.querySelectorAll(".mobile-nav a").forEach((link) => {
   link.addEventListener("click", () => link.closest("details")?.removeAttribute("open"));
 });

@@ -220,8 +220,8 @@ p,li { text-wrap: pretty; }
 .page-simple h1 { font-size: clamp(3.2rem,7vw,6rem); line-height: .94; }
 .page-simple h2 { margin-top: 2.5em; font-size: clamp(1.55rem,3vw,2.3rem); }
 
-.reveal-ready { opacity: 1; transform: translateY(18px); filter: blur(5px); }
-.reveal-ready.is-revealed { transform: none; filter: none; transition: transform .8s var(--ease-premium), filter .8s var(--ease-premium); }
+.reveal-ready,
+.reveal-ready.is-revealed { opacity: 1; transform: none; filter: none; }
 
 @media (max-width: 900px) {
   .shop-card-featured { grid-column: auto; }
@@ -499,6 +499,9 @@ body .quick-answer,body .desk-reset,body .toppicks{border:0;border-radius:16px;b
 body .pick{border-color:var(--line);transition:background .3s ease}body .pick:hover{background:var(--surface)}body .pick .name a:after{border:0;border-radius:8px;background:var(--night)}
 @media(max-width:620px){body .brand img{width:148px}body .section{padding-block:64px}body .section-title{font-size:clamp(2.45rem,12vw,3.6rem)}body .shop-hero h1,body .article h1,body .page-simple h1{font-size:clamp(3rem,14vw,4.25rem)}}
 @media(max-width:620px){.standard{grid-template-areas:"copy" "image" "list";grid-template-columns:1fr}}
+
+/* Trust and legal pages */
+.trust-page{padding:clamp(64px,9vw,112px) 0}.trust-page .content{max-width:780px}.trust-page h1{font:700 clamp(42px,6vw,72px)/1.02 'DM Sans',system-ui,sans-serif;letter-spacing:-.04em;text-wrap:balance;margin:12px 0 24px}.trust-page h2{font:700 clamp(25px,3vw,34px)/1.15 'DM Sans',system-ui,sans-serif;letter-spacing:-.025em;margin:50px 0 14px}.trust-page p,.trust-page li{max-width:70ch;color:#3f4945}.trust-page a{text-underline-offset:4px}.trust-meta{display:flex;gap:10px 22px;flex-wrap:wrap;padding:18px 0;border-block:1px solid var(--line);color:var(--muted);font-size:14px}.trust-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}.trust-links a{display:inline-flex;min-height:44px;align-items:center;padding:0 15px;background:var(--ink);color:#fff;text-decoration:none}.author-card{display:grid;grid-template-columns:110px 1fr;gap:24px;align-items:center;margin:34px 0;padding:24px;background:#fff}.author-mark{display:grid;place-items:center;aspect-ratio:1;background:var(--ink);color:#fff;font-weight:800;font-size:28px}.legal-nav{display:flex;gap:12px 20px;flex-wrap:wrap;margin-top:36px;padding-top:20px;border-top:1px solid var(--line);font-size:14px}@media(max-width:620px){.author-card{grid-template-columns:72px 1fr;padding:18px}.trust-page{padding-block:48px}.trust-page h1{font-size:clamp(38px,12vw,52px)}}
 * {
   box-sizing: border-box;
 }
